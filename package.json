@@ -1,0 +1,33 @@
+{
+  "name": "killer-react",
+  "version": "1.0.0",
+  "description": "practices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "npm run build",
+      "build": "webpack -d && webpack-dev-server --content-base src/ --inline --hot --port 1234"
+    },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RonyVidaur/KillerOnReact.git"
+  },
+  "author": "Rony Vidaur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RonyVidaur/KillerOnReact/issues"
+  },
+  "homepage": "https://github.com/RonyVidaur/KillerOnReact#readme",
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
