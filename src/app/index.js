@@ -5,10 +5,13 @@ var ReactDom = require('react-dom');
 var TodoComponent = React.createClass({
   getInitialState: function(){
     return {
-      todos: ["eat", "work", "sleep"]
+      todos: ["eat", "work", "sleep", "greet gf"]
     }
   },
   render: function(){
+    var todos = this.state.todos.map(function(item,index){
+      return (<li>{item}</li>)
+    })
     return(
       <div>
           <h1>Hello <strong>{this.props.person.name}!</strong></h1>
@@ -16,11 +19,7 @@ var TodoComponent = React.createClass({
           <p>and {this.props.person.favoriteTeam} is a very strong choice aswell</p>
           <div id="todo-list">
             <p>Here is today's schedule</p>
-            <ul>
-              <li>{this.state.todos[0]}</li>
-              <li>{this.state.todos[1]}</li>
-              <li>{this.state.todos[2]}</li>
-            </ul>
+            <ul>{todos}</ul>
           </div>
       </div>
 
