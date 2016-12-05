@@ -36,7 +36,17 @@ var TodoComponent = React.createClass({
     var updatedTodos = this.state.todos
     updatedTodos.push(item)
     this.setState({todos: updatedTodos})
+  },
+  //lifecycle functions
+  componentWillMount() {
+    console.log('componentWillMount')
+  },
+  componentDidMount() {
+    console.log('componentDidMount')
+  },
+  componentWillUpdate() {
+    console.log('componentWillUpdate')
   }
-});
+})
 //put the component into the page
 ReactDom.render(<TodoComponent person = "Rony" />, document.getElementById('todo-wrapper'));
