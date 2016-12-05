@@ -1,9 +1,24 @@
-var React = require('react');
+import React from 'react'
 var ReactDom = require('react-dom');
 var TodoItem = require('./todo-item')
 var AddItem = require('./add-item')
 require('./css/index.css')
+import { Router, Route, browserHistory } from 'react-router'
+import About from './about'
 //create component
+var App = React.createClass({
+  render: function(){
+    return(
+      <Router history={browserHistory}>
+        <Route path={'/'} component={TodoComponent}></Route>
+        <Route path={'/about'} component={About}></Route>
+      </Router>
+    )
+  }
+})
+
+
+
 var TodoComponent = React.createClass({
   getInitialState: function(){
     return {
@@ -49,4 +64,4 @@ var TodoComponent = React.createClass({
   }
 })
 //put the component into the page
-ReactDom.render(<TodoComponent person = "Rony" />, document.getElementById('todo-wrapper'));
+ReactDom.render(<App/>, document.getElementById('todo-wrapper'));
