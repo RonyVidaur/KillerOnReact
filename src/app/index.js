@@ -3,7 +3,7 @@ var ReactDom = require('react-dom');
 var TodoItem = require('./todo-item')
 var AddItem = require('./add-item')
 require('./css/index.css')
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, Route, browserHistory, Link } from 'react-router'
 import About from './about'
 //create component
 var App = React.createClass({
@@ -28,10 +28,11 @@ var TodoComponent = React.createClass({
   render: function(){
     var todos = this.state.todos
       todos = todos.map(function(item,index){
-      return (<TodoItem item={item} key={index} onDelete={this.onDelete}/>)
+        return (<TodoItem item={item} key={index} onDelete={this.onDelete}/>)
     }.bind(this))
     return(
-      <div>
+      <div id='todo-list'>
+        <Link to={'/about'}>About</Link>
         <h1 >Hello, {this.props.person}</h1>
         <p>remember to get shit done</p>
         <ul>{todos}</ul>
